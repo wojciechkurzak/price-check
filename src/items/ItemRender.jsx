@@ -7,8 +7,8 @@ const ItemRender = () => {
 
     return (
         <div>
-            {data.prices.values.map(element => 
-                <ItemTemplate key={element[1]} info={element}/>
+            {data.prices.values.map(element =>
+                element[14] === '0' && <ItemTemplate key={element[13]} info={element}/>
             )}
         </div>
     )

@@ -1,9 +1,14 @@
 import React from 'react'
 
 const ItemTemplate = ({info}) => {
+    const name = info[16]
+    const minBase = info[7]
+    const maxBase = info[6]
+    const stock = Math.floor(Math.random() * 100)
+
     return (
         <div>
-            <p>{info[0]} | {info[2]} | {info[3]} | {info[4]} | {info[5]}</p>
+            <p>{name} | {minBase} | {maxBase} | {stock}</p>
         </div>
     )
 }
