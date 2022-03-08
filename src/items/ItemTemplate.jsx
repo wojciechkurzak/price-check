@@ -1,4 +1,5 @@
 import React from 'react'
+import './ItemTemplate.scss'
 
 const ItemTemplate = ({info}) => {
     const name = info[16]
@@ -7,8 +8,19 @@ const ItemTemplate = ({info}) => {
     const stock = Math.floor(Math.random() * 100)
 
     return (
-        <div>
-            <p>{name} | {minBase} | {maxBase} | {stock}</p>
+        <div className='itemContainer'>
+            <div className='item name'>
+                <p>{name}</p>
+            </div>
+            <div className='item minBase'>
+                <p>{minBase}</p>
+            </div>
+            <div className='item maxBase'>
+                <p>{maxBase}</p>
+            </div>
+            <div className='item stock'>
+                <p>{stock}</p>
+            </div>
         </div>
     )
 }

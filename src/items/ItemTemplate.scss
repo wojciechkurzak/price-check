@@ -1,0 +1,59 @@
+.itemContainer{
+    display: flex;
+    font-size: 14px;
+    border: 1px solid #666;
+
+    .item{
+        height: 40px;
+        background-color: #222;
+        color: white;
+        position: relative;
+        padding-left: 4px;
+
+        p{
+            line-height: 40px;
+
+            &:after{
+                content: '';
+                display: block;
+                height: 10px;
+                width: 100%;
+                position: absolute;
+                top: -13px;
+                font-size: 9px;
+            }
+        }
+    }
+
+    .name{
+        width: 40%;
+
+        p:after{
+            content: 'Name';
+        }
+    }
+
+    .minBase{
+        width: 25%;
+
+        p:after{
+            content: 'MinPrice';
+        }
+    }
+
+    .maxBase{
+        width: 25%;
+
+        p:after{
+            content: 'MaxPrice';
+        }
+    }
+
+    .stock{
+        width: 10%;
+
+        p:after{
+            content: 'Stock';
+        }
+    }
+}
