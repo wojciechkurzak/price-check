@@ -1,5 +1,7 @@
 import './App.scss'
 import { useState, useEffect } from 'react'
+import UserContext from './UserContext'
+import ItemRender from './items/ItemRender'
 
 function App() {
     const [data, setData] = useState('')
@@ -10,10 +12,15 @@ function App() {
             .then((data) => {
                 setData(data)
                 console.log(data)
+                console.log(data.prices.values)
             })
     }, [])
 
-    return <p>Hello world!</p>
+    return(
+        <UserContext.Provider value={data}>
+            {data !== '' && <ItemRender/>}
+        </UserContext.Provider>
+        )
 }
 
 export default App
