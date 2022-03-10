@@ -20,15 +20,20 @@ const ItemRender = () => {
     const pageChange = ({selected}) => {
         setPageNumber(selected)
     }
+    console.log(pageNumber)
 
     return (
         <div>
             {displayItems}
             <ReactPaginate
-                previousLabel={'Prevoius'}
+                previousLabel={'Previous'}
                 nextLabel={'Next'}
+                breakLabel={''}
                 pageCount={pageCount}
                 onPageChange={pageChange}
+                containerClassName={'paginationButtons'}
+                pageRangeDisplayed={(pageNumber !== 1 && pageNumber !== 2) ? 5 : 4}
+                marginPagesDisplayed={0}
             />
         </div>
     )
