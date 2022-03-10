@@ -2,6 +2,7 @@ import {useState, useContext} from 'react'
 import ReactPaginate from 'react-paginate'
 import UserContext from '../UserContext'
 import ItemTemplate from './ItemTemplate'
+import './Pagination.scss'
 
 const ItemRender = () => {
     const data = useContext(UserContext)
@@ -26,8 +27,8 @@ const ItemRender = () => {
         <div>
             {displayItems}
             <ReactPaginate
-                previousLabel={'Previous'}
-                nextLabel={'Next'}
+                previousLabel={'<'}
+                nextLabel={'>'}
                 breakLabel={''}
                 pageCount={pageCount}
                 onPageChange={pageChange}

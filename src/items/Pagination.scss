@@ -1,0 +1,20 @@
+.paginationButtons{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 10px;
+
+    li{
+        margin: 0 6px;
+        color: #fff;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 24px;
+    }
+
+    .selected{
+        background-color: #222;
+        border-radius: 50%;
+    }
+}
