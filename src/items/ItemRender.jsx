@@ -2,6 +2,7 @@ import {useState, useContext} from 'react'
 import ReactPaginate from 'react-paginate'
 import UserContext from '../UserContext'
 import ItemTemplate from './ItemTemplate'
+import NameFilter from './NameFilter'
 import './Pagination.scss'
 
 const ItemRender = () => {
@@ -16,15 +17,15 @@ const ItemRender = () => {
 
     const displayItems = items
             .slice(pagesVisited, pagesVisited + itemsPerPage)
-            .map(item => <ItemTemplate key={item[13]} info={item}/>)
-
+            .map(item => <ItemTemplate key={item[13]} item={item}/>)
+            
     const pageChange = ({selected}) => {
         setPageNumber(selected)
     }
-    console.log(pageNumber)
 
     return (
         <div>
+            <NameFilter setItems={setItems}/>
             {displayItems}
             <ReactPaginate
                 previousLabel={'<'}
