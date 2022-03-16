@@ -11,6 +11,8 @@ const ItemRender = () => {
     const [pageNumber, setPageNumber] = useState(0)
     const [items, setItems] = useState(data.prices.values.filter(element => element[14] === '0' && element))
 
+    //Data for pagination
+
     const itemsPerPage = 13
     const pagesVisited = pageNumber * itemsPerPage
     const pageCount = Math.ceil(items.length / itemsPerPage)
@@ -18,7 +20,7 @@ const ItemRender = () => {
     const displayItems = items
             .slice(pagesVisited, pagesVisited + itemsPerPage)
             .map(item => <ItemTemplate key={item[13]} item={item}/>)
-            
+
     const pageChange = ({selected}) => {
         setPageNumber(selected)
     }

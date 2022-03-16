@@ -2,6 +2,8 @@ import {useContext} from 'react'
 import UserContext from '../UserContext'
 import TextField from '@mui/material/TextField';
 
+//Styling for name input
+
 const InputNameStyle = {
     '&': {
         backgroundColor: '#222',
@@ -22,6 +24,8 @@ const InputNameStyle = {
 
 const NameFilter = ({setItems}) => {
     const data = useContext(UserContext)
+
+    //Filtering data by name
 
     const newData = (input) => {
         const newItems = data.prices.values
