@@ -9,15 +9,30 @@ const ItemRender = () => {
     const data = useContext(UserContext)
 
     const [pageNumber, setPageNumber] = useState(0)
-    const [items, setItems] = useState(data.prices.values.filter(element => element[14] === '0' && element))
+    const [name, setName] = useState('')
+    const [category, setCategory] = useState('')
 
     //Data for pagination
 
     const itemsPerPage = 13
     const pagesVisited = pageNumber * itemsPerPage
-    const pageCount = Math.ceil(items.length / itemsPerPage)
 
-    const displayItems = items
+    //Filtering data
+
+    const filterItems = data.prices.values
+            .filter((element) => 
+                        name.toLowerCase() === element[16].slice(0, name.length).toLowerCase() 
+                        && element[14] === '0' 
+                        && element)
+
+    //Number of pages
+
+    const pageCount = Math.ceil(filterItems.length / itemsPerPage)
+    console.log(pageCount)
+
+    //Displaying data
+
+    const displayItems = filterItems
             .slice(pagesVisited, pagesVisited + itemsPerPage)
             .map(item => <ItemTemplate key={item[13]} item={item}/>)
 
@@ -27,7 +42,7 @@ const ItemRender = () => {
 
     return (
         <div>
-            <NameFilter setItems={setItems}/>
+            <NameFilter setName={setName}/>
             {displayItems}
             <ReactPaginate
                 previousLabel={'<'}
