@@ -1,4 +1,5 @@
-import React from 'react'
+import {useContext} from 'react'
+import UserContext from '../UserContext'
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
@@ -30,6 +31,7 @@ const SelectCategoryStyle = {
 }
 
 const CategoryFilter = ({category, setCategory, setSub}) => {
+    const data = useContext(UserContext)
 
     //Changing value of subcategory to empty string if category isn't set
 
@@ -40,9 +42,7 @@ const CategoryFilter = ({category, setCategory, setSub}) => {
 
     //All possible main categories
 
-    const categories = ['Main Weapon', 'Sub-weapon', 'Awakening', 'Armor', 'Accessories', 'Lightstone', 
-                        'Material' ,'Enhancement/Upgrade', 'Consumables', 'Life Tools', 'Alchemy Stone',
-                        'Magic Crystal', 'Pearl Item', 'Dye', 'Mount', 'Ship', 'Wagon', 'Furniture']
+    const categories = [...new Set(data.prices.values.map(e => e[0]))].slice(1)
 
     return (
         <div className='categoryFilter'>
