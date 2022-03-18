@@ -19,7 +19,7 @@ const ItemRender = () => {
 
     useEffect(() => {
         setPageNumber(0)
-    }, [name, category])
+    }, [name, category, sub])
 
     
     //Data for pagination
