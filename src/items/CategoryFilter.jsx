@@ -9,7 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 const SelectCategoryStyle = {
     '&': {
         color: '#fff',
-        minWidth: '120px',
+        minWidth: '160px',
         backgroundColor: '#222'
     },
     'label': {
@@ -39,7 +39,7 @@ const CategoryFilter = ({category, setCategory}) => {
     return (
         <div className='categoryFilter'>
             <FormControl variant="filled" sx={SelectCategoryStyle}>
-            <InputLabel>Age</InputLabel>
+            <InputLabel>Category</InputLabel>
             <Select
                 value={category}
                 onChange={(e) => {setCategory(e.target.value)}}
