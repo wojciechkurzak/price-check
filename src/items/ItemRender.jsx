@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate'
 import UserContext from '../UserContext'
 import ItemTemplate from './ItemTemplate'
 import NameFilter from './NameFilter'
+import CategoryFilter from './CategoryFilter'
 import './Pagination.scss'
 
 const ItemRender = () => {
@@ -22,13 +23,13 @@ const ItemRender = () => {
     const filterItems = data.prices.values
             .filter((element) => 
                         name.toLowerCase() === element[16].slice(0, name.length).toLowerCase() 
+                        && category === element[0].slice(0, category.length)
                         && element[14] === '0' 
                         && element)
 
     //Number of pages
 
     const pageCount = Math.ceil(filterItems.length / itemsPerPage)
-    console.log(pageCount)
 
     //Displaying data
 
@@ -42,7 +43,8 @@ const ItemRender = () => {
 
     return (
         <div>
-            <NameFilter setName={setName}/>
+            <NameFilter name={name} setName={setName}/>
+            <CategoryFilter category={category} setCategory={setCategory}/>
             {displayItems}
             <ReactPaginate
                 previousLabel={'<'}
