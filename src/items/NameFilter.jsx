@@ -20,13 +20,14 @@ const InputNameStyle = {
     }
 }
 
-const NameFilter = ({setName}) => {
+const NameFilter = ({name, setName}) => {
     return (
         <div className='nameFilter'>
             <TextField 
                 id="filled-basic" 
                 label="Name" 
-                variant="filled" 
+                variant="filled"
+                value={name}
                 onChange={(e) => {setName(e.target.value)}} 
                 sx={InputNameStyle}
             />
