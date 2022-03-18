@@ -1,4 +1,4 @@
-import {useState, useContext} from 'react'
+import {useState, useContext, useEffect} from 'react'
 import ReactPaginate from 'react-paginate'
 import UserContext from '../UserContext'
 import ItemTemplate from './ItemTemplate'
@@ -13,6 +13,13 @@ const ItemRender = () => {
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
 
+    //Forcing page to first one when filter is applied
+
+    useEffect(() => {
+        setPageNumber(0)
+    }, [name, category])
+
+    
     //Data for pagination
 
     const itemsPerPage = 13
@@ -55,6 +62,7 @@ const ItemRender = () => {
                 containerClassName={'paginationButtons'}
                 pageRangeDisplayed={(pageNumber !== 1 && pageNumber !== 2) ? 5 : 4}
                 marginPagesDisplayed={0}
+                forcePage={pageNumber}
             />
         </div>
     )
