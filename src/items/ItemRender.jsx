@@ -4,6 +4,7 @@ import UserContext from '../UserContext'
 import ItemTemplate from './ItemTemplate'
 import NameFilter from './NameFilter'
 import CategoryFilter from './CategoryFilter'
+import SubcategoryFilter from './SubcategoryFilter'
 import './Pagination.scss'
 
 const ItemRender = () => {
@@ -12,7 +13,8 @@ const ItemRender = () => {
     const [pageNumber, setPageNumber] = useState(0)
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
-
+    const [sub, setSub] = useState('')
+    
     //Forcing page to first one when filter is applied
 
     useEffect(() => {
@@ -31,6 +33,7 @@ const ItemRender = () => {
             .filter((element) => 
                         name.toLowerCase() === element[16].slice(0, name.length).toLowerCase() 
                         && category === element[0].slice(0, category.length)
+                        && sub === element[1].slice(0, sub.length)
                         && element[14] === '0' 
                         && element)
 
@@ -51,7 +54,8 @@ const ItemRender = () => {
     return (
         <div>
             <NameFilter name={name} setName={setName}/>
-            <CategoryFilter category={category} setCategory={setCategory}/>
+            <CategoryFilter category={category} setCategory={setCategory} setSub={setSub}/>
+            <SubcategoryFilter sub={sub} setSub={setSub} category={category}/>
             {displayItems}
             <ReactPaginate
                 previousLabel={'<'}

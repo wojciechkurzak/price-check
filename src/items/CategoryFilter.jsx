@@ -29,7 +29,15 @@ const SelectCategoryStyle = {
     },
 }
 
-const CategoryFilter = ({category, setCategory}) => {
+const CategoryFilter = ({category, setCategory, setSub}) => {
+
+    //Changing value of subcategory to empty string if category isn't set
+
+    const setValues = (e) => {
+        setCategory(e.target.value)
+        setSub('')
+    }
+
     //All possible main categories
 
     const categories = ['Main Weapon', 'Sub-weapon', 'Awakening', 'Armor', 'Accessories', 'Lightstone', 
@@ -42,8 +50,8 @@ const CategoryFilter = ({category, setCategory}) => {
             <InputLabel>Category</InputLabel>
             <Select
                 value={category}
-                onChange={(e) => {setCategory(e.target.value)}}
-                label="Age"
+                onChange={setValues}
+                label="Category"
             >   
                 <MenuItem value={''}>None</MenuItem>
                 {categories.map((e) => <MenuItem key={e} value={e}>{e}</MenuItem>)}
