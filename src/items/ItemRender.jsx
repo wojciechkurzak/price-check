@@ -5,6 +5,7 @@ import ItemTemplate from './ItemTemplate'
 import NameFilter from './NameFilter'
 import CategoryFilter from './CategoryFilter'
 import SubcategoryFilter from './SubcategoryFilter'
+import NoResult from './NoResult'
 import './Pagination.scss'
 
 const ItemRender = () => {
@@ -56,18 +57,20 @@ const ItemRender = () => {
             <NameFilter name={name} setName={setName}/>
             <CategoryFilter category={category} setCategory={setCategory} setSub={setSub}/>
             <SubcategoryFilter sub={sub} setSub={setSub} category={category}/>
-            {displayItems}
-            <ReactPaginate
-                previousLabel={'<'}
-                nextLabel={'>'}
-                breakLabel={''}
-                pageCount={pageCount}
-                onPageChange={pageChange}
-                containerClassName={'paginationButtons'}
-                pageRangeDisplayed={(pageNumber !== 1 && pageNumber !== 2) ? 5 : 4}
-                marginPagesDisplayed={0}
-                forcePage={pageNumber}
-            />
+            {displayItems.length !== 0 ? displayItems : <NoResult />}
+            {displayItems.length !== 0 ? 
+                <ReactPaginate
+                    previousLabel={'<'}
+                    nextLabel={'>'}
+                    breakLabel={''}
+                    pageCount={pageCount}
+                    onPageChange={pageChange}
+                    containerClassName={'paginationButtons'}
+                    pageRangeDisplayed={(pageNumber !== 1 && pageNumber !== 2) ? 5 : 4}
+                    marginPagesDisplayed={0}
+                    forcePage={pageNumber}
+                />
+                : null}
         </div>
     )
 }
