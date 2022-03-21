@@ -53,7 +53,7 @@ const ItemRender = () => {
     }
 
     return (
-        <div>
+        <>
             <NameFilter name={name} setName={setName}/>
             <CategoryFilter category={category} setCategory={setCategory} setSub={setSub}/>
             <SubcategoryFilter sub={sub} setSub={setSub} category={category}/>
@@ -71,7 +71,7 @@ const ItemRender = () => {
                     forcePage={pageNumber}
                 />
                 : null}
-        </div>
+        </>
     )
 }
 

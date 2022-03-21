@@ -2,6 +2,7 @@ import './App.scss'
 import { useState, useEffect } from 'react'
 import UserContext from './UserContext'
 import ItemRender from './items/ItemRender'
+import DataLoading from './misc/DataLoading'
 
 function App() {
     const [data, setData] = useState('')
@@ -16,7 +17,10 @@ function App() {
 
     return(
         <UserContext.Provider value={data}>
-            {data !== '' && <ItemRender/>}
+            <div className='dataContainer'>
+                {data !== '' ? <ItemRender/> : <DataLoading/>}
+            </div>
+            
         </UserContext.Provider>
         )
 }

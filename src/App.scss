@@ -7,4 +7,9 @@
 
 body{
     background-color: #111;
+    overflow-x: hidden;
+}
+
+.dataContainer{
+    position: relative;
 }

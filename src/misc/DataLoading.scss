@@ -1,0 +1,48 @@
+.dataLoading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    .canvasAnimation{
+        position: relative;
+        width: 100px;
+        height: 100px;
+
+        .canvasInternal{
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: rotate 1.4s infinite linear reverse;
+        }
+
+        .canvasExternal{
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: rotate 2s infinite linear;
+        }
+    }
+    
+
+    p{
+        color: #fff;
+        font-size: 50px;
+        margin-top: 26px;
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
