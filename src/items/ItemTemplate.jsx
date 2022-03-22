@@ -10,7 +10,7 @@ const ItemTemplate = ({item}) => {
     return (
         <div className='itemContainer'>
             <div className='item name'>
-                <p>{name}</p>
+                <p className={`grade-${item[11]}`}>{name}</p>
             </div>
             <div className='item minBase'>
                 <p>{minBase}</p>
