@@ -20,6 +20,7 @@ const DataLoading = () => {
 
         canvas.beginPath()
         canvas.arc(50, 50, radius, startAngle, endAngle)
+        canvas.lineCap = 'round'
         canvas.strokeStyle = color
         canvas.filter = `drop-shadow(0px 0px 3px ${color})`
         canvas.stroke()
