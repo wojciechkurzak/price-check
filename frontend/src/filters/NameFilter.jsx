@@ -1,14 +1,12 @@
 import TextField from '@mui/material/TextField';
 import './NameFilter.scss'
 
-//Styling for name input
+// Styling for name input
 
 const InputNameStyle = {
     '&': {
         backgroundColor: '#222',
-    },
-    'label': {
-        color: '#fff'
+        borderRadius: '4px'
     },
     'label.Mui-focused': {
         color: '#fff'
@@ -31,6 +29,7 @@ const NameFilter = ({name, setName}) => {
                 value={name}
                 onChange={(e) => {setName(e.target.value)}} 
                 sx={InputNameStyle}
+                fullWidth={true}
             />
         </div>
         )

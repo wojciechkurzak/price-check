@@ -4,17 +4,15 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import './CategoryFilter.scss'
 
 //Styling for select 
 
 const SelectCategoryStyle = {
     '&': {
         color: '#fff',
-        minWidth: '160px',
-        backgroundColor: '#222'
-    },
-    'label': {
-        color: '#fff'
+        backgroundColor: '#222',
+        borderRadius: '4px'
     },
     '.MuiSelect-select':{
         color: '#fff'
@@ -44,7 +42,7 @@ const CategoryFilter = ({category, setCategory, setSub}) => {
         
     return (
         <div className='categoryFilter'>
-            <FormControl variant="filled" sx={SelectCategoryStyle}>
+            <FormControl variant="filled" sx={SelectCategoryStyle} fullWidth={true}>
                 <InputLabel>Category</InputLabel>
                 <Select
                     value={category}
