@@ -34,21 +34,20 @@ const SubcategoryFilter = ({sub, setSub, category}) => {
     const data = useContext(UserContext)
 
     //Sub categories depending on main category
-
-    const subcategories = [...new Set(data.prices.values.map(e => e[0] === category && e[1]))].slice(1)
-
+    const subcategories = data !== '' ? [...new Set(data.prices.values.map(e => e[0] === category && e[1]))].slice(1) : null
+        
     return (
         <div className='subcategoryFilter'>
             <FormControl variant="filled" sx={SelectSubcategoryStyle}>
-            <InputLabel>Sub-category</InputLabel>
-            <Select
-                value={sub}
-                onChange={(e) => {setSub(e.target.value)}}
-                label="Subcategory"
-            >   
-                <MenuItem value={''}>None</MenuItem>
-                {subcategories.map((e) => <MenuItem key={e} value={e}>{e}</MenuItem>)}
-            </Select>
+                <InputLabel>Sub-category</InputLabel>
+                <Select
+                    value={sub}
+                    onChange={(e) => {setSub(e.target.value)}}
+                    label="Subcategory"
+                >   
+                    <MenuItem value={''}>None</MenuItem>
+                    {data !== '' && subcategories.map((e) => <MenuItem key={e} value={e}>{e}</MenuItem>)}
+                </Select>
             </FormControl>
         </div>
     )

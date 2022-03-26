@@ -34,28 +34,26 @@ const CategoryFilter = ({category, setCategory, setSub}) => {
     const data = useContext(UserContext)
 
     //Changing value of subcategory to empty string if category isn't set
-
     const setValues = (e) => {
         setCategory(e.target.value)
         setSub('')
     }
 
     //All possible main categories
-
-    const categories = [...new Set(data.prices.values.map(e => e[0]))].slice(1)
-
+    const categories = data !== '' ? [...new Set(data.prices.values.map(e => e[0]))].slice(1) : null
+        
     return (
         <div className='categoryFilter'>
             <FormControl variant="filled" sx={SelectCategoryStyle}>
-            <InputLabel>Category</InputLabel>
-            <Select
-                value={category}
-                onChange={setValues}
-                label="Category"
-            >   
-                <MenuItem value={''}>None</MenuItem>
-                {categories.map((e) => <MenuItem key={e} value={e}>{e}</MenuItem>)}
-            </Select>
+                <InputLabel>Category</InputLabel>
+                <Select
+                    value={category}
+                    onChange={setValues}
+                    label="Category"
+                >   
+                    <MenuItem value={''}>None</MenuItem>
+                    {data !== '' && categories.map((e) => <MenuItem key={e} value={e}>{e}</MenuItem>)}
+                </Select>
             </FormControl>
         </div>
     )
