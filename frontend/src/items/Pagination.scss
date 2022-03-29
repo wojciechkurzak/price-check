@@ -2,15 +2,15 @@
     display: flex;
     list-style-type: none;
     justify-content: center;
-    margin-top: 10px;
+    margin: 18px 0;
+    font-size: 20px;
 
     li{
         margin: 0 6px;
         color: #fff;
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         text-align: center;
-        line-height: 24px;
     }
 
     .selected{

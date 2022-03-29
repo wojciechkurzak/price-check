@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate'
+import ArrowBackIosNewSharpIcon from '@mui/icons-material/ArrowBackIosNewSharp';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import './Pagination.scss'
 
 const Pagination = ({pageNumber, setPageNumber, pageCount}) => {
@@ -8,8 +10,8 @@ const Pagination = ({pageNumber, setPageNumber, pageCount}) => {
     }
     return (
         <ReactPaginate
-            previousLabel={'<'}
-            nextLabel={'>'}
+            previousLabel={<ArrowBackIosNewSharpIcon/>}
+            nextLabel={<ArrowForwardIosSharpIcon/>}
             breakLabel={''}
             pageCount={pageCount}
             onPageChange={pageChange}
