@@ -7,16 +7,33 @@
 
 body{
     background-color: #111;
-    min-height: 100vh;
-    width: 100vw;
+    // min-height: 100vh;
     overflow-x: hidden;
 }
 
-.filters{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    margin-top: 20px;
+.top-wrapper{
+    .filters{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 769px){
+    .top-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 40px;
+
+        .filters{
+            margin: 0;
+            margin-left: 40px;
+            width: 760px;
+            justify-content: space-between;
+        }
+    }
 }
 
 .data{

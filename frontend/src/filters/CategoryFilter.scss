@@ -8,3 +8,14 @@
         line-height: 24px;
     }
 }
+
+@media only screen and (min-width: 769px){
+    .categoryFilter{
+        width: 32%;
+        transform: scale(1);
+    
+        label{
+            font-size: 16px;
+        }
+    }
+}

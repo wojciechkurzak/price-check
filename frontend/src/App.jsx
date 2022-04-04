@@ -24,11 +24,13 @@ function App() {
 
     return(
         <UserContext.Provider value={data}>
-            <Logo />
-            <div className='filters'>
-                <NameFilter name={name} setName={setName}/>
-                <CategoryFilter category={category} setCategory={setCategory} setSub={setSub}/>
-                <SubcategoryFilter sub={sub} setSub={setSub} category={category}/>
+            <div className='top-wrapper'>
+                <Logo />
+                <div className='filters'>
+                    <NameFilter name={name} setName={setName}/>
+                    <CategoryFilter category={category} setCategory={setCategory} setSub={setSub}/>
+                    <SubcategoryFilter sub={sub} setSub={setSub} category={category}/>
+                </div>
             </div>
             <div className='data'>
                 {data !== '' ? <ItemRender name={name} category={category} sub={sub}/> : <DataLoading/>}

@@ -6,3 +6,12 @@
         margin-top: 12px;
     }
 }
+
+@media only screen and (min-width: 769px){
+    .logo{
+        img{
+            width: 79px;
+            margin: 0;
+        }
+    }
+}

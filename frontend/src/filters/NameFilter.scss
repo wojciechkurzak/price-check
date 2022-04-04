@@ -8,3 +8,14 @@
         line-height: 25px;
     }
 }
+
+@media only screen and (min-width: 769px){
+    .nameFilter{
+        width: 32%;
+        transform: scale(1);
+    
+        label{
+            font-size: 16px;
+        }
+    }
+}
