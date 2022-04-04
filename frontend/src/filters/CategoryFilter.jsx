@@ -26,6 +26,10 @@ const SelectCategoryStyle = {
     '.MuiFilledInput-underline::after': {
         borderBottomColor: '#fff'
     },
+    '.MuiMenuItem-root': {
+        color: '#fff',
+        backgroundColor: '#222'
+    },
 }
 
 const CategoryFilter = ({category, setCategory, setSub}) => {
