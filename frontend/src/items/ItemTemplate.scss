@@ -1,7 +1,6 @@
 .itemContainer{
     display: flex;
     flex-wrap: wrap;
-    font-size: 14px;
     width: 94%;
     border-radius: 4px;
     background-color: #1B1B1B;
@@ -16,6 +15,7 @@
         p{
             line-height: 48px;
             text-align: center;
+            font-size: 14px;
 
             &:after{
                 content: '';
@@ -39,6 +39,29 @@
         }
     }
 
+    @media only screen and (min-width: 769px){
+        .name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40%;
+            padding: 0 10px;
+
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 84%;
+                border-radius: 2px;
+                background-color: #333;
+            }
+        }
+    }
+
     .minBase{
         width: calc(100% / 3);
 
@@ -56,6 +79,23 @@
             height: 92%;
             border-radius: 2px;
             background-color: #333;
+        }
+    }
+
+    @media only screen and (min-width: 769px){
+        .minBase{
+            width: 24%;
+            padding: 0 10px;
+
+            p:after{
+                left: 0;
+            }
+
+            &::after{
+                height: 84%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
         }
     }
 
@@ -79,11 +119,67 @@
         }
     }
 
+    @media only screen and (min-width: 769px){
+        .maxBase{
+            width: 24%;
+            padding: 0 10px;
+
+            p:after{
+                left: 0;
+            }
+
+            &::after{
+                height: 84%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
     .stock{
         width: calc(100% / 3);
 
         p:after{
             content: 'Stock';
+        }
+    }
+
+    @media only screen and (min-width: 769px){
+        .stock{
+            width: 12%;
+            padding: 0 10px;
+
+            p:after{
+                left: 0;
+            }
+
+            &::after{
+                height: 84%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px){
+    .itemContainer{
+        width: 100%;
+
+        .item{
+            height: 50px;
+
+            p{
+                line-height: 60px;
+                font-size: 16px;
+            }
+
+            &:nth-child(1){
+                p{
+                    line-height: 20px;
+                    align-self: center;
+                }
+            }
         }
     }
 }
