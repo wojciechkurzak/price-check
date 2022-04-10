@@ -2,6 +2,7 @@ const compression = require('compression')
 const express = require('express')
 const { google } = require('googleapis')
 const cors = require('cors')
+const path = require('path')
 require('dotenv').config()
 
 const app = express()
@@ -11,21 +12,8 @@ app.use(cors())
 app.use(compression())
 
 app.get('/data', async (req, res) => {
-    const credentials = {
-        type: process.env.TYPE,
-        project_id: process.env.PROJECT_ID,
-        private_key_id: process.env.PRIVATE_KEY_ID,
-        private_key: process.env.PRIVATE_KEY,
-        client_email: process.env.CLIENT_EMAIL,
-        client_id: process.env.CLIENT_ID,
-        auth_uri: process.env.AUTH_URI,
-        token_uri: process.env.TOKEN_URI,
-        auth_provider_x509_cert_url: process.env.AUTH_PROVIDER,
-        client_x509_cert_url: process.env.CLIENT_CERT_URL,
-    }
-
     const auth = new google.auth.GoogleAuth({
-        credentials,
+        keyFile: 'google-credentials.json',
         scopes: 'https://www.googleapis.com/auth/spreadsheets',
     })
 
@@ -49,6 +37,15 @@ app.get('/data', async (req, res) => {
     res.send({ prices: getPrices.data })
 })
 
+if (process.env.NODE_ENV === 'production') {
+    //Static folder
+    app.use(express.static('frontend/build'))
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    })
+}
+
 const port = process.env.PORT || 5000
 
-app.listen(5000, (req, res) => console.log(`Running on ${port}`))
+app.listen(port, (req, res) => console.log(`Running on ${port}`))

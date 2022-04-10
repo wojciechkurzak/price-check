@@ -15,11 +15,9 @@ function App() {
     const [sub, setSub] = useState('')
 
     useEffect(() => {
-        fetch('http://localhost:5000/data')
+        fetch('https://bdo-pricecheck.herokuapp.com/data')
             .then((res) => res.json())
-            .then((data) => {
-                setData(data)
-            })
+            .then((data) => setData(data))
     }, [])
 
     return(
