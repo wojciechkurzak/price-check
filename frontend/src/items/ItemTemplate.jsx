@@ -3,8 +3,8 @@ import './ItemTemplate.scss'
 
 const ItemTemplate = ({item}) => {
     const name = item[16]
-    const minBase = item[7]
-    const maxBase = item[6]
+    const minBase = item[6]
+    const maxBase = item[7]
     const stock = Math.floor(Math.random() * 100)
 
     return (

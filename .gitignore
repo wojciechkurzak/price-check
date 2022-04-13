@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 ToDo.txt
-credentials.json
+google-credentials.json
 
 # dependencies
 /frontend/node_modules
