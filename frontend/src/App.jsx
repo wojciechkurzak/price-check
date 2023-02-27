@@ -22,9 +22,9 @@ function App() {
 
 	return (
 		<UserContext.Provider value={data}>
-			<div className="top-wrapper">
+			<div className='top-wrapper'>
 				<Logo />
-				<div className="filters">
+				<div className='filters'>
 					<NameFilter name={name} setName={setName} />
 					<CategoryFilter
 						category={category}
@@ -38,7 +38,7 @@ function App() {
 					/>
 				</div>
 			</div>
-			<div className="data">
+			<div className='data'>
 				{data !== '' ? (
 					<ItemRender name={name} category={category} sub={sub} />
 				) : (
