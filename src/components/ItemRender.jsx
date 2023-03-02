@@ -25,7 +25,6 @@ const ItemRender = ({ name, category, sub }) => {
 				item.name.slice(0, name.length).toLowerCase() &&
 			category === item.mainLabel.slice(0, category.length) &&
 			sub === item.subLabel.slice(0, sub.length)
-		// item.subKey === '0'
 	)
 
 	//Number of pages
@@ -34,7 +33,7 @@ const ItemRender = ({ name, category, sub }) => {
 	//Displaying data
 	const displayItems = filterItems
 		.slice(pagesVisited, pagesVisited + itemsPerPage)
-		.map((item) => <ItemTemplate item={item} />)
+		.map((item) => <ItemTemplate key={item.description} item={item} />)
 
 	return (
 		<>
