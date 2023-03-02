@@ -1,12 +1,12 @@
-import './App.scss'
 import { useState, useEffect } from 'react'
 import UserContext from './UserContext'
-import ItemRender from './items/ItemRender'
-import DataLoading from './misc/DataLoading'
-import NameFilter from './filters/NameFilter'
-import CategoryFilter from './filters/CategoryFilter'
-import SubcategoryFilter from './filters/SubcategoryFilter'
-import Logo from './misc/Logo'
+import ItemRender from './components/ItemRender'
+import DataLoading from './components/DataLoading'
+import NameFilter from './components/NameFilter'
+import CategoryFilter from './components/CategoryFilter'
+import SubcategoryFilter from './components/SubcategoryFilter'
+import Logo from './components/Logo'
+import './App.scss'
 
 function App() {
 	const [data, setData] = useState('')
