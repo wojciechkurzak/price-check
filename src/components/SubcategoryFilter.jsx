@@ -42,7 +42,10 @@ const SubcategoryFilter = ({ sub, setSub, category }) => {
 						)
 					),
 			  ]
-			: null
+			: []
+
+	//deleting boolean value from set
+	subcategories.pop()
 
 	return (
 		<div className='subcategoryFilter'>
