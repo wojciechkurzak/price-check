@@ -28,8 +28,8 @@ const NameFilter = ({ name, setName }) => {
 				variant='filled'
 				autoComplete='off'
 				value={name}
-				onChange={(e) => {
-					setName(e.target.value)
+				onChange={(event) => {
+					setName(event.target.value)
 				}}
 				sx={InputNameStyle}
 				fullWidth={true}

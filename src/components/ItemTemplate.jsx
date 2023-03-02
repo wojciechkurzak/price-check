@@ -2,15 +2,15 @@ import React from 'react'
 import '../styles/ItemTemplate.scss'
 
 const ItemTemplate = ({ item }) => {
-	const name = item[16]
-	const minBase = item[6]
-	const maxBase = item[7]
+	const description = item.description
+	const minBase = item.minBase
+	const maxBase = item.maxBase
 	const stock = Math.floor(Math.random() * 100)
 
 	return (
 		<div className='itemContainer'>
 			<div className='item name'>
-				<p className={`grade-${item[11]}`}>{name}</p>
+				<p className={`grade-${item.grade}`}>{description}</p>
 			</div>
 			<div className='item minBase'>
 				<p>{minBase}</p>

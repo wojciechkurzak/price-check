@@ -15,10 +15,10 @@ function App() {
 	const [sub, setSub] = useState('')
 
 	useEffect(() => {
-		fetch('https://bdo-pricecheck.herokuapp.com/data')
-			.then((res) => res.json())
-			.then((data) => setData(data))
-	}, [])
+		import('./data/ItemsData.json').then((data) => {
+			setData(data.items)
+		})
+	})
 
 	return (
 		<UserContext.Provider value={data}>

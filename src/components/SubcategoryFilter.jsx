@@ -36,9 +36,12 @@ const SubcategoryFilter = ({ sub, setSub, category }) => {
 		data !== ''
 			? [
 					...new Set(
-						data.prices.values.map((e) => e[0] === category && e[1])
+						data.map(
+							(item) =>
+								item.mainLabel === category && item.subLabel
+						)
 					),
-			  ].slice(1)
+			  ]
 			: null
 
 	return (
@@ -51,16 +54,16 @@ const SubcategoryFilter = ({ sub, setSub, category }) => {
 				<InputLabel>Sub-category</InputLabel>
 				<Select
 					value={sub}
-					onChange={(e) => {
-						setSub(e.target.value)
+					onChange={(event) => {
+						setSub(event.target.value)
 					}}
 					label='Subcategory'
 				>
 					<MenuItem value={''}>None</MenuItem>
 					{data !== '' &&
-						subcategories.map((e) => (
-							<MenuItem key={e} value={e}>
-								{e}
+						subcategories.map((label) => (
+							<MenuItem key={label} value={label}>
+								{label}
 							</MenuItem>
 						))}
 				</Select>

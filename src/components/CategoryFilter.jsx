@@ -43,9 +43,7 @@ const CategoryFilter = ({ category, setCategory, setSub }) => {
 
 	//All possible main categories
 	const categories =
-		data !== ''
-			? [...new Set(data.prices.values.map((e) => e[0]))].slice(1)
-			: null
+		data !== '' ? [...new Set(data.map((item) => item.mainLabel))] : null
 
 	return (
 		<div className='categoryFilter'>
@@ -58,9 +56,9 @@ const CategoryFilter = ({ category, setCategory, setSub }) => {
 				<Select value={category} onChange={setValues} label='Category'>
 					<MenuItem value={''}>None</MenuItem>
 					{data !== '' &&
-						categories.map((e) => (
-							<MenuItem key={e} value={e}>
-								{e}
+						categories.map((label) => (
+							<MenuItem key={label} value={label}>
+								{label}
 							</MenuItem>
 						))}
 				</Select>
