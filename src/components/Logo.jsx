@@ -4,8 +4,11 @@ import '../styles/Logo.scss'
 
 const Logo = () => {
 	return (
-		<div className='logo'>
-			<img src={logo} alt='logo' />
+		<div className='logoContainer'>
+			<div className='logo'>
+				<img src={logo} alt='logo' />
+			</div>
+			<span className='title'>BDO Pricecheck</span>
 		</div>
 	)
 }

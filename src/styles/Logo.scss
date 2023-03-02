@@ -1,17 +1,33 @@
-.logo{
-    img{
-        display: block;
-        width: 54px;
-        margin: 0 auto;
-        margin-top: 12px;
-    }
+.logoContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 12px;
 }
 
-@media only screen and (min-width: 769px){
-    .logo{
-        img{
-            width: 79px;
-            margin: 0;
-        }
-    }
+.logo {
+	img {
+		display: flex;
+		width: 40px;
+		margin: 0 auto;
+	}
+}
+
+.title {
+	color: #fff;
+	font-size: 26px;
+	margin-left: 16px;
+}
+
+@media only screen and (min-width: 769px) {
+	.logoContainer {
+		margin-top: 0;
+	}
+
+	.logo {
+		img {
+			width: 56px;
+			margin: 0;
+		}
+	}
 }
