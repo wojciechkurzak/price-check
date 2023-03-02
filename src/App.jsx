@@ -18,7 +18,7 @@ function App() {
 		import('./data/ItemsData.json').then((data) => {
 			setData(data.items)
 		})
-	})
+	}, [])
 
 	return (
 		<UserContext.Provider value={data}>
