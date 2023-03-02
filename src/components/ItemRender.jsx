@@ -15,7 +15,7 @@ const ItemRender = ({ name, category, sub }) => {
 	}, [name, category, sub])
 
 	//Data for pagination
-	const itemsPerPage = 13
+	const itemsPerPage = 12
 	const pagesVisited = pageNumber * itemsPerPage
 
 	//Filtering data
