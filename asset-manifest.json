@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/price-check/static/css/main.2bae9064.css",
+    "main.js": "/price-check/static/js/main.c762648c.js",
+    "static/js/210.a067b83e.chunk.js": "/price-check/static/js/210.a067b83e.chunk.js",
+    "static/media/logo.png": "/price-check/static/media/logo.48b74b3bf95aac02d9de.png",
+    "index.html": "/price-check/index.html",
+    "main.2bae9064.css.map": "/price-check/static/css/main.2bae9064.css.map",
+    "main.c762648c.js.map": "/price-check/static/js/main.c762648c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bae9064.css",
+    "static/js/main.c762648c.js"
+  ]
+}
